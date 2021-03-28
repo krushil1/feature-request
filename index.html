@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Feature Request</title>
+      
+    </head>
+        <body style="background-color:whitesmoke;"></body>
+  
+      <section class="contact section" id="contact">
+                  <h2 class="section-title" style="text-decoration: underline;">School Timer Mobile Version Feature Request</h2>
+                  
+  <!--<input type="submit" value="Send" class="contact_button button">-->
+  
+                  <div class="contact__container bd-grid">
+                      <form id="my-form" action="https://formspree.io/f/mayawarn" method="POST" class="contact__form">
+                          <textarea type="text" placeholder="Message" name="feature request from school timer app" id="" cols="0" rows="10" class="contact__input"></textarea>
+                          <input class="contact__button button" type="submit" value="Send" id="my-form-button">
+                          <p class="skills__text" id="my-form-status"></p>
+                          </form>
+      
+                          <!-- Place this script at the end of the body tag -->
+      
+                          <script>
+                          window.addEventListener("DOMContentLoaded", function() {
+      
+                          // get the form elements defined in your form HTML above
+                          
+                          var form = document.getElementById("my-form");
+                          var button = document.getElementById("my-form-button");
+                          var status = document.getElementById("my-form-status");
+      
+                          // Success and Error functions for after the form is submitted
+                          
+                          function success() {
+                              form.reset();
+                              button.style = "display: none ";
+                              alert("Thank you for requesting a feature! I will try my very best to implement your feature!");
+                          }
+      
+                          function error() {
+                              alert("Oops! There was a problem. Try again!");
+                          }
+      
+                          // handle the form submission event
+      
+                          form.addEventListener("submit", function(ev) {
+                              ev.preventDefault();
+                              var data = new FormData(form);
+                              ajax(form.method, form.action, data, success, error);
+                          });
+                          });
+      
+                          // helper function for sending an AJAX request
+      
+                          function ajax(method, url, data, success, error) {
+                          var xhr = new XMLHttpRequest();
+                          xhr.open(method, url);
+                          xhr.setRequestHeader("Accept", "application/json");
+                          xhr.onreadystatechange = function() {
+                              if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                              if (xhr.status === 200) {
+                              success(xhr.response, xhr.responseType);
+                              } else {
+                              error(xhr.status, xhr.response, xhr.responseType);
+                              }
+                          };
+                          xhr.send(data);
+                          }
+                          </script>
+  
+  
+  
+  
+                  </div>
+              </section>
+              <h6 class="section-title1">Crafted by Krushil Amrutiya</h6>
+  </html>
